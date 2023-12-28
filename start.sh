@@ -35,3 +35,7 @@ if [ -n "$latest_version" ]; then
 else
     echo "❌ Failed to retrieve the latest version from the GitHub API." >> /home/container/logs/update_check.log 2>&1
 fi
+
+while true; do
+    sleep 60
+done
