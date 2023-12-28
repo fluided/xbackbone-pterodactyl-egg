@@ -1,5 +1,3 @@
-#!/bin/ash
-
 if [ ! -d "/home/container/logs/" ]; then
     mkdir -p /home/container/logs/
 fi
