@@ -27,4 +27,6 @@ Community contributions are highly encouraged! If you have ideas for enhancement
 
 For any questions or assistance, reach out to me on Discord with the username: `fluided`.
 
+**Special Note:** This egg was made specifically for Honte-Hosting. Join their Discord server: [Honte-Hosting Discord](https://discord.gg/JwcZfRnzdC).
+
 Happy hosting with XbackBone! 🚀
