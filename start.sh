@@ -1,12 +1,15 @@
 #!/bin/ash
 
-if [ ! -d "/home/container/logs/" ]; then
-    mkdir -p /home/container/logs/
-fi
+# Function to create directories if they don't exist
+create_directory() {
+    if [ ! -d "$1" ]; then
+        mkdir -p "$1"
+    fi
+}
 
-if [ ! -d "/home/container/tmp/" ]; then
-    mkdir -p /home/container/tmp/
-fi
+# Create necessary directories
+create_directory "/home/container/logs/"
+create_directory "/home/container/tmp/"
 
 echo "🔄 Starting PHP-FPM..."
 /usr/sbin/php-fpm81 --fpm-config /home/container/php-fpm/php-fpm.conf --daemonize || true
@@ -36,6 +39,7 @@ else
     echo "❌ Failed to retrieve the latest version from the GitHub API." >> /home/container/logs/update_check.log 2>&1
 fi
 
+# Keep the script running
 while true; do
     sleep 60
 done
