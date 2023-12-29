@@ -35,6 +35,9 @@ else
 fi
 
 while true; do
+    if ! ps aux | grep -q "[p]hp-fpm81" || ! ps aux | grep -q "[n]ginx"; then
+        echo "❌ PHP-FPM or Nginx is not running. Exiting script."
+        exit 1
+    fi
     sleep 60
 done
-
