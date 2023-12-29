@@ -34,9 +34,8 @@ else
     echo "❌ Failed to retrieve the latest version from the GitHub API." >> /home/container/logs/update_check.log 2>&1
 fi
 
-until ! pgrep -x "php-fpm81" > /dev/null || ! pgrep -x "nginx" > /dev/null; do
+until pgrep -x "php-fpm81" > /dev/null && pgrep -x "nginx" > /dev/null; do
     sleep 60
 done
 
-echo "❌ PHP-FPM or Nginx is not running. Exiting script."
-exit 1
+echo "✅ PHP-FPM and Nginx are running."
