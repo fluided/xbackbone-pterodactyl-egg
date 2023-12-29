@@ -45,4 +45,4 @@ while true; do
     sleep 60
 done
 
-:
+echo "running" > /dev/null
