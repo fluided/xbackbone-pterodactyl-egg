@@ -37,7 +37,7 @@ fi
 
 while true; do
     if pidof php-fpm81 > /dev/null && pidof nginx > /dev/null; then
-        :
+        echo "running" > /dev/null
     else
         echo "❌ PHP-FPM or Nginx is not running. Exiting script."
         exit 1
