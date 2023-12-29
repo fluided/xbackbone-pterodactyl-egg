@@ -34,12 +34,15 @@ else
     echo "❌ Failed to retrieve the latest version from the GitHub API." >> /home/container/logs/update_check.log 2>&1
 fi
 
+
 while true; do
     if pidof php-fpm81 > /dev/null && pidof nginx > /dev/null; then
-        echo "✅ PHP-FPM and Nginx are running."
+        :
     else
         echo "❌ PHP-FPM or Nginx is not running. Exiting script."
         exit 1
     fi
     sleep 60
 done
+
+:
